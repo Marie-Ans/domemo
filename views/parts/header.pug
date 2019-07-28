@@ -1,0 +1,7 @@
+body
+    header
+        h1 DOMEMO
+        p
+            if session
+                b Bienvenue #{session.pseudo} : 
+                a(id=session.pseudo href='/disconnect') Se d&eacute;connecter

@@ -1,0 +1,400 @@
+body {
+    background-color: #0ca0c1;
+    color: #000;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    width: 100vw; height: 100vh; 
+}
+
+
+/*Styles generaux*/
+.error {
+    color: #be0903;
+    font-weight: bold;
+}
+
+.success {
+    color: #049931;
+    font-weight: bold;
+}
+
+.bouton {
+    background:    #0ca0c1;
+    background:    linear-gradient(#3d85c6, #007a95);
+    border-radius: 5px;
+    padding:       8px 20px;
+    color:         #ffffff;
+    display:       inline-block;
+    font:          normal bold 18px/1 "Calibri", sans-serif;
+    text-align:    center;
+    text-shadow:   1px 1px #000000;
+}
+
+
+.bouton:hover {
+    cursor: pointer;
+}
+
+/*Zone forcer réinitialisation*/
+
+#bug {
+    padding : 10px;
+}
+
+#boutonBug {
+    background:    #f96a53;
+    border-radius: 5px;
+    padding:       8px 20px;
+    color:         #000;
+    display:       inline-block;
+    font:          normal bold 18px/1 "Calibri", sans-serif;
+    font-size : 0.8em;
+    text-align:    center;
+}
+
+#boutonBug:hover {
+    cursor: pointer;
+}
+
+/*Pages non autorisées*/
+#forbidden {
+    margin: auto;
+    text-align: center;
+}
+
+#forbidden h2 {
+    color: red;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/*header et footer*/
+header, footer {
+    color: #000;
+    font-family: 'Orbitron', sans-serif;
+    padding: 10px;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+}
+
+h1 {
+    margin: 0px;  
+}
+
+header > p{
+    letter-spacing: 2px;
+    padding-right: 100px;
+}
+
+
+header a, footer a {
+    color: #fff;
+}
+
+
+/*Main*/
+main {
+    background-color: #ececec;
+    display: flex;
+}
+
+/*Scores*/
+
+#infosClientsScores {
+    width: 18%;
+}
+
+#clients>.infos{
+    border-bottom:4px solid #0ca0c1;
+    height: 200px;
+}
+
+#scores>.infos{
+    height: 500px;
+}
+
+.infos {
+    border-right:4px solid #0ca0c1;
+    color: #2b2b2b;
+    font-size: 0.7em;
+    padding: 0px;
+    padding-left: 10px;
+    height: 200px;
+    overflow-y: scroll;
+    /* width: 18%; */
+}
+
+
+
+h3 {
+    border-right:4px solid #0ca0c1;
+    color: #2b2b2b;
+    font-size: 0.7em;
+    margin: 0px;
+    padding: 5px;
+}
+
+.scoreJoueur {
+    margin-top: 5px;
+}
+
+
+#scores .pseudo {
+    font-weight: bold;
+    margin: 0px;
+    margin-top: 10px;
+     
+}
+
+#scores ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/**************** Section jeu ****************/
+section {
+    margin: 0;
+    padding: 0;
+    width: 80%;
+}
+
+section div {
+    padding: 0px;
+}
+
+#zoneJoueurs, #infoJeu, #grilleJeu {
+    padding: 15px;
+}
+
+
+/*Zone des infos joueurs*/
+#zoneJoueurs {
+    border-bottom :1px solid #0ca0c1;
+    display: flex;
+}
+
+/*Zone des infos pour un joueur */
+.zoneJoueur{
+    padding: 10px;
+    position: relative;
+    width: 50%
+}
+
+.zoneJoueur h2 {
+    color: #0ca0c1;
+    display: inline;
+    font-style: normal;
+    margin: 0px;
+}
+
+.zoneJoueur:first-child{
+    border-right:1px solid #0ca0c1;
+}
+
+
+.zoneJoueur:last-child h2{
+    padding-left: 15px;
+}
+
+
+.joueurCourant {
+    background-color: #98d7e1;
+}
+
+.infosJoueur {
+    margin-top: 10px;
+}
+
+.infosJoueur .avatar {
+    float: left;
+    margin-right: 10px;
+}
+
+.infosJoueur p {
+    margin: 0px 10px;
+}
+
+.trophee {
+    float: right;
+}
+
+/**************** Zone info sur jeu ****************/
+h4 {
+    margin:0px;
+    padding: 0px;
+}
+
+.pink{
+    color:  #e0493e;
+}
+
+/**************** Grille et dominos ****************/
+#grilleJeu{
+    background-color: #000;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 5px;
+    /* position: relative; */
+    width: 650px;
+}
+
+.ligneJeu {
+    display:flex;
+}
+
+
+.domino {
+    margin: 5px;
+    width: 100px; height: 100px;
+}
+
+.unavailable {
+    background-image: url("/img/dominos/unavailable.png");
+}
+
+.mystery {
+    background-image: url("/img/dominos/mystery.png");
+}
+
+.hov {
+    background-image: url("/img/dominos/hov.png");
+}
+
+.founded{
+    background-image: url("/img/dominos/founded.png");
+}
+
+
+
+/**************** POPUP PARTIE GAGNEE  ****************/
+.select {
+    border: 3px solid #e0493e;
+}
+#popupPartieGagnee {
+    background-color: #f0eeef;
+    border: 3px solid #e0493e;
+    /* display: none; */
+    font-size: 1.2em;
+    font-weight: bold;
+    opacity: 0.95;
+    position: fixed; 
+    margin: auto;
+    text-align: center;
+    height: 150px; 
+    width: 500px;;
+}
+
+#point {
+    background-color: rgb(54, 207, 54);
+    /* background-color: rgb(233, 47, 47); */
+    border-radius: 15px;
+    color: black;
+    font-size: 3em;
+    font-weight: bold;
+    position: absolute;
+    text-align: center;
+    left: 300px;
+    top: 100px;
+    width: 100px;
+}
+
+
+/************** Connexion/création compte : Regles et Formulaires  ****************/
+
+
+#regles, #formulaire {
+    background-color: white;
+    padding: 20px;
+}
+
+#regles {
+    font-size: 0.8em;
+    text-align: justify;
+    width: 60%;
+}
+#regles>p {
+    margin:0;padding:0;
+    margin-top:5px;
+}
+
+#formulaire {
+    margin-left: 30px;
+}
+#formulaire>nav, form {
+    width: 500px;
+} 
+
+#formulaire>nav {
+    margin-bottom: 30px;
+}
+
+#formulaire a{
+    color: #0ca0c1;
+    font-weight: bold;
+}
+
+#formulaire ul {
+
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#formulaire li {
+    justify-content: flex-start;
+    margin-right: 30px;
+}
+
+#formulaire li.selected {
+    font-weight: bold;
+}
+
+
+fieldset {
+    font-size: 0.9em;
+    margin-bottom: 30px;
+    margin-left: 0px;
+}
+
+legend {
+    font-weight: bold;
+}
+
+fieldset div{
+    margin-top : 10px;
+}
+
+
+fieldset div label {
+    display: inline-block;
+    text-align: right;
+    width: 140px;
+}
+
+fieldset div input {
+    margin-left: 5px;
+}
+
+
+fieldset:nth-child(2) div{
+    display:inline-block;
+    margin-right: 15px;
+}
+
+#avatars div{
+    display:inline-block;
+    margin-right: 15px;
+}
+
+
+.masque {
+    display: none;
+}
+

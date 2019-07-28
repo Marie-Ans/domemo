@@ -1,0 +1,9 @@
+include parts/head.pug
+include parts/header.pug
+#forbidden
+  h2=msg
+  if session
+    a(href='/domemo') Retour &agrave; Domemo
+  else 
+    a(href='/') Retour &agrave; l&apos;accueil
+

@@ -1,0 +1,92 @@
+section
+  #zoneJoueurs
+    .zoneJoueur
+      if joueurUn 
+        if session && session.pseudo === joueurUn.pseudo
+          h2 Joueur 1 :
+          #rejoindreJoueurUn.bouton.masque Rejoindre la partie 
+          #quitterJoueurUn.bouton Quitter la partie
+        else 
+          h2 Joueur 1 :
+          #rejoindreJoueurUn.bouton.masque Rejoindre la partie 
+          #quitterJoueurUn.bouton.masque Quitter la partie
+        .infosJoueur
+            img.avatar(src=joueurUn.avatar)
+            p.pseudoJoueur
+              b #{joueurUn.pseudo} 
+            p.paires
+              | Paires gagn&eacute;es :
+              span #{joueurUn.pairesGagnees}
+            
+      else
+        if joueurDeux && session.pseudo === joueurDeux.pseudo
+          h2 Joueur 1 : 
+            #rejoindreJoueurUn.bouton.masque Rejoindre la partie
+            #quitterJoueurUn.bouton.masque Quitter la partie
+        else
+          h2 Joueur 1 : 
+            #rejoindreJoueurUn.bouton Rejoindre la partie
+            #quitterJoueurUn.bouton.masque Quitter la partie
+          .infosJoueur
+              img.avatar
+              p.pseudoJoueur
+              p.paires
+    .zoneJoueur
+      if joueurDeux
+        if session && session.pseudo === joueurDeux.pseudo
+          h2 Joueur 2 : 
+          #rejoindreJoueurDeux.bouton.masque Rejoindre la partie 
+          #quitterJoueurDeux.bouton Quitter la partie
+        else 
+          h2 Joueur 2 :
+          #rejoindreJoueurDeux.bouton.masque Rejoindre la partie 
+          #quitterJoueurDeux.bouton.masque Quitter la partie
+        .infosJoueur
+            img.avatar(src=joueurDeux.avatar)
+            p.pseudoJoueur
+              b #{joueurDeux.pseudo} 
+            p.paires
+              | Paires gagn&eacute;es :
+              span #{joueurDeux.pairesGagnees}
+      else
+        if joueurUn && session.pseudo === joueurUn.pseudo
+            h2 Joueur 2 : 
+              #rejoindreJoueurDeux.bouton.masque Rejoindre la partie
+              #quitterJoueurDeux.bouton.masque Quitter la partie
+        else
+          h2 Joueur 2 : 
+          #rejoindreJoueurDeux.bouton Rejoindre la partie
+          #quitterJoueurDeux.bouton.masque Quitter la partie
+          .infosJoueur
+              img.avatar
+              p.pseudoJoueur
+              p.paires   
+  #infoJeu
+    if joueurUn && joueurDeux
+      h4 JEU EN COURS
+    else
+      h4 EN ATTENTE DE DEUX JOUEURS POUR COMMENCER LA PARTIE
+  #grilleJeu
+    #ligneUne.ligneJeu
+      #Une_0.domino.unavailable  
+      #Une_1.domino.unavailable  
+      #Une_2.domino.unavailable  
+      #Une_3.domino.unavailable  
+      #Une_4.domino.unavailable
+      #Une_5.domino.unavailable 
+    #ligneDeux.ligneJeu
+      #Deux_0.domino.unavailable  
+      #Deux_1.domino.unavailable  
+      #Deux_2.domino.unavailable  
+      #Deux_3.domino.unavailable  
+      #Deux_4.domino.unavailable
+      #Deux_5.domino.unavailable 
+    #ligneTrois.ligneJeu
+      #Trois_0.domino.unavailable  
+      #Trois_1.domino.unavailable  
+      #Trois_2.domino.unavailable  
+      #Trois_3.domino.unavailable  
+      #Trois_4.domino.unavailable
+      #Trois_5.domino.unavailable 
+  #popupPartieGagnee.masque
+    

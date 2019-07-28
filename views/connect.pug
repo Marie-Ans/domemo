@@ -1,0 +1,49 @@
+
+include parts/head.pug
+include parts/header.pug
+main
+    section#regles
+        p DOMEMO est un jeu de memory qui se joue &agrave; deux. 
+        p Le jeu comporte 9 paires de dominos, soit 18 dominos faces cach&eacute;es.
+        p  A chaque tour le joueur retourne deux dominos :
+        ul
+            li s&apos;ils sont identiques, le joueur remporte la paire, et joue &agrave; nouveau
+            li s&apos;ils sont diff&eacute;rents, les dominos sont &agrave; nouveau retourn&eacute;s face cach&eacute;e et c&apos;est &agrave; l&apos;autre joueur de jouer
+        p Le joueur qui a le plus de paires en fin de partie a gagn&eacute;. 
+        p
+            b Connectez-vous avec vos identifiants pour jouer. 
+        p Si une partie est d&eacute;j&agrave; en cours, vous serez mis en liste d&apos;attente et pourrez regarder la partie.
+    section#formulaire
+        nav
+            ul
+                li.selected Se connecter
+                li
+                    a(href='/?r=create') Cr&eacute;er un compte
+        form(action='/' method='post')
+            fieldset
+                legend Entrez vos identifiants :
+                if msg
+                    p(class=''+msg.class) #{msg.text}
+                div
+                    label(for='pseudo') Votre pseudo : 
+                    input#pseudo(type='text' name='pseudo')
+                div
+                    label(for='pwd') Votre mot de passe : 
+                    input#pwd(type='password' name='pwd')
+            fieldset
+                legend Choisissez votre avatar :
+                div 
+                    input#avfem1(type='radio' name='avatar' value='fem1' checked='')
+                    img(src='/img/avatars/fem1.png' alt='choix avatar 1')
+                div
+                    input#avmasc1(type='radio' name='avatar' value='masc1')
+                    img(src='/img/avatars/masc1.png' alt='choix avatar 2')
+                div
+                    input#avfem2(type='radio' name='avatar' value='fem2')
+                    img(src='/img/avatars/fem2.png' alt='choix avatar 3')
+                div
+                    input#avmasc2(type='radio' name='avatar' value='masc2')
+                    img(src='/img/avatars/masc2.png' alt='choix avatar 4')
+
+            input.bouton(type='submit' value='Se connecter')
+include parts/footer.pug

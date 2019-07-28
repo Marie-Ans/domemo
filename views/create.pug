@@ -1,0 +1,34 @@
+include parts/head.pug
+include parts/header.pug
+main
+    section#regles
+        p DOMEMO est un jeu de memory qui se joue &agrave; deux. 
+        p Le jeu comporte 9 paires de dominos, soit 18 dominos faces cach&eacute;es.
+        p  A chaque tour le joueur retourne deux dominos :
+        ul
+            li s&apos;ils sont identiques, le joueur remporte la paire, et joue &agrave; nouveau
+            li s&apos;ils sont diff&eacute;rents, les dominos sont &agrave; nouveau retourn&eacute;s face cach&eacute;e et c&apos;est &agrave; l&apos;autre joueur de jouer
+        p Le joueur qui a le plus de paires en fin de partie a gagn&eacute;. 
+        p
+            b Connectez-vous avec vos identifiants pour jouer. 
+        p Si une partie est d&eacute;j&agrave; en cours, vous serez mis en liste d&apos;attente et pourrez regarder la partie.
+    section#formulaire
+        nav
+            ul
+                li
+                    a(href='/') Se connecter 
+                li.selected Cr&eacute;er un compte
+        if msg
+            p(class=''+msg.class) #{msg.text}
+        form(action='/' method='post')
+            fieldset
+                legend Choisissez vos identifiants :
+                div
+                    label(for='pseudo') Votre pseudo : 
+                    input#pseudo(type='text' name='pseudo')
+                div
+                    label(for='pwd') Votre mot de passe : 
+                    input#pwd(type='password' name='pwd' placeholder='Au moins 8 caractères')
+            input.bouton(type='submit' value='Créer le compte')
+            input(type='hidden' name='create' value='create')
+include parts/footer.pug

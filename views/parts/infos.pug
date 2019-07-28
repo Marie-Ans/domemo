@@ -1,0 +1,20 @@
+#infosClientsScores
+  #clients
+    h3 CONNECTES
+    .infos
+  #scores
+    h3 HISTORIQUE DES SCORES
+    .infos
+      if err
+        p #{msg.txt}
+      each joueur in scores
+        p(id='sc_'+joueur.pseudo).pseudo #{joueur.pseudo.toUpperCase()}        
+        ul
+          li
+            | - Parties gagn&eacute;es - perdues : 
+            span.success #{joueur.scores.parties_gagnees}
+            |  - 
+            span.error #{joueur.scores.parties_perdues}
+          li - Paires empoch&eacute;es :  #{joueur.scores.paires_gagnees}
+          li - Durée de jeu : #{joueur.duree.heures}h #{joueur.duree.minutes}m #{joueur.duree.secondes}s
+
