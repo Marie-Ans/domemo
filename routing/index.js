@@ -23,11 +23,11 @@ Par défaut, formulaire de connexion. Si l'utilisateur clique sur le lien "Crée
 */
 router.get('/', function(req, res){
     if(req.session && req.session.client){
-        datas.title = 'Erreur 403';
-        datas.msg = 'Accès interdit : un utilisateur ('+req.session.client.pseudo+') est déjà connecté sur ce navigateur.';
+        datas.title = 'Erreur 401';
+        datas.msgIndex = 'Accès interdit : un utilisateur ('+req.session.client.pseudo+') est déjà connecté sur ce navigateur.';
         state.infoClients.push(req.session.client);
         state.idClients.push(req.session.client.idClient);
-        res.render('403',datas);
+        res.render('401',datas);
         return;
     }
     if(req.query.r){

@@ -1,0 +1,10 @@
+include parts/head.pug
+include parts/header.pug
+#forbidden
+  if msgIndex
+    h2=msgIndex
+    a(href='/domemo') Revenir &agrave; Domemo
+  else 
+    h2=msgDomemo
+    a(href='/') Retour à l'accueil
+
