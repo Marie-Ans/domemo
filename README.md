@@ -2,7 +2,7 @@
 ## Jeu en ligne multijoueur de Memory.
 _Réalisé dans le cadre de la formation Developpeur Fullstack JS, IFOCOP Paris XI, Promo DIVJS10, 2019_
 
-### DESCRIPTION SOMMAIRE DU JEU
+### Description du jeu
 Il s'agit d'un jeu en ligne qui se joue à deux joueurs. 
 
 18 dominos (9 paires de dominos identiques) sont distribués aléatoirement faces cachées.
