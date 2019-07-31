@@ -121,7 +121,6 @@ var Domemo = function () {
     this.afficherDamier = function () { 
         $('.domino').css('background-image','');
         if (this.enCours){
-            // console.log(this.positions);
             for (var j = 0; j < this.positions.length; j++) {
                 var ligne = $('#ligne' + this.positions[j].ligne + '>div');
                 var colonne = this.positions[j].colonne;
@@ -186,16 +185,25 @@ var Domemo = function () {
             $('#quitterJoueurUn').addClass('masque'); 
         }
     };
-    this.afficherHistoriqueScores = function (infosClients) {
+    this.afficherHistoriqueScores = function (infosClients,pseudoClient) {
         for(var i = 0; i<infosClients.length;i++){
-            var info_partGagnees = '#sc_' + infosClients[i].pseudo + ' + ul li:first>.success';
-            var info_partPerdues = '#sc_' + infosClients[i].pseudo + ' + ul li:first>.error';
-            var info_paires = '#sc_' + infosClients[i].pseudo + ' + ul li:nth-child(2)';
-            var info_duree = '#sc_' + infosClients[i].pseudo + ' + ul li:last';
-            $(info_partGagnees).text(infosClients[i].scores.parties_gagnees);
-            $(info_partPerdues).text(infosClients[i].scores.parties_perdues);
-            $(info_paires).text('- Paires empochées : ' + infosClients[i].scores.paires_gagnees);
-            $(info_duree).text('- Durée de jeu : ' + infosClients[i].duree.heures + 'h ' + infosClients[i].duree.minutes + 'm ' + infosClients[i].duree.secondes + 's');
+            if($('#sc_'+infosClients[i].pseudo).length!=0){
+                var info_partGagnees = '#sc_' + infosClients[i].pseudo + ' + ul li:first>.success';
+                var info_partPerdues = '#sc_' + infosClients[i].pseudo + ' + ul li:first>.error';
+                var info_paires = '#sc_' + infosClients[i].pseudo + ' + ul li:nth-child(2)';
+                var info_duree = '#sc_' + infosClients[i].pseudo + ' + ul li:last';
+                $(info_partGagnees).text(infosClients[i].scores.parties_gagnees);
+                $(info_partPerdues).text(infosClients[i].scores.parties_perdues);
+                $(info_paires).text('- Paires empochées : ' + infosClients[i].scores.paires_gagnees);
+                $(info_duree).text('- Durée de jeu : ' + infosClients[i].duree.heures + 'h ' + infosClients[i].duree.minutes + 'm ' + infosClients[i].duree.secondes + 's');
+            }
+            else {
+                if(infosClients[i].parties_gagnees!=0 || infosClients[i].parties_perdues!=0){
+                    var nouveauScorePseudo = '<p id="sc_'+infosClients[i].pseudo+'" class="pseudo">'+infosClients[i].pseudo.toUpperCase();
+                    var infoHistorique = '<ul><li>- Partie gagnées - perdues : <span class="success">'+infosClients[i].scores.parties_gagnees+'</span> -  <span class="error">'+infosClients[i].scores.parties_perdues+'</span></li><li> - Paire empochées : '+infosClients[i].scores.paires_gagnees+'</li><li>Durée de jeu : '+ infosClients[i].duree.heures + 'h ' + infosClients[i].duree.minutes + 'm ' + infosClients[i].duree.secondes + 's</li></ul>';
+                    $('#scores .infos').append(nouveauScorePseudo+infoHistorique);
+                }
+            }
         }
     };
     this.reinitialiserJeu = function () {

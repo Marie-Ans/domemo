@@ -158,7 +158,7 @@ $(document).ready(function(){
     socket.on('reinitialiserAffichage',function(data){
         domemo.chargerEtatJeu(data.partie);
         domemo.afficherClients(data.infoClients, pseudoClient);
-        domemo.afficherHistoriqueScores(data.infoClients)
+        domemo.afficherHistoriqueScores(data.infoClients,pseudoClient)
         domemo.dominosTires = 0;
         domemo.afficherJoueurs(pseudoClient);
         domemo.afficherInfosPartie();
