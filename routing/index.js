@@ -3,7 +3,7 @@ const router = express.Router();
 const passwordHash = require('password-hash');
 
 const MongoClient = require('mongodb').MongoClient;
-const url = "mongodb+srv://Marie:_Back1503@divjs10ma-csygg.gcp.mongodb.net/test?retryWrites=true&w=majority";
+const url = "mongodb+srv://Marie:jeuback2019@divjs10ma-csygg.gcp.mongodb.net/test?retryWrites=true&w=majority";
 
 const bodyParser = require('body-parser');
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
